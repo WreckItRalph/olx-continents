@@ -1,0 +1,10 @@
+<div>
+    <ul class="list-group">
+        <li class='list-group-item' [class.active]='selectedContinent?.code == continent.code' *ngFor='let continent of (continents$ | async)' (click)='getContinentDetails(continent)'>
+            {{ continent?.name }}
+            <div *ngIf='selectedContinent?.code == continent.code' class="spinner-border text-danger" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </li>
+    </ul>
+</div>
